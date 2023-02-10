@@ -13,8 +13,8 @@ using namespace std;
 #define ss second
 #define mp make_pair
 #define TETO(a, b) ((a) + (b-1))/(b)
-#define dbg(msg, x) cout << msg << " = " << x << endl
-#define print(x,y) loop(i,0,y){cout << x[i] << " ";} cout << "\n";
+#define dbg(x) cout << #x << " = " << x << endl
+#define print(x,y) loop(it,0,y){cout << x[it] << " ";} cout << "\n";
 
 typedef long long ll;
 typedef long double ld;
@@ -24,12 +24,11 @@ typedef priority_queue<int, vector<int>, greater<int>> pqi;
 
 const ll MOD = 1e9+7;
 const int MAX = 1e4+5;
-const ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f; //escrevemos 3f 8 vezes
 const double PI = acos(-1);
 
-
 int32_t main(){ sws; 
-    
 
+    
     return 0;
 }
