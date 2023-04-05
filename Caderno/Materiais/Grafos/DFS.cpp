@@ -1,11 +1,23 @@
-// DFS para percorrer todos os vertices a partir do no inicial u
-// Complexidade: O(V + E), onde V eh o numero de vertices e E o numero de arestas
-int explore(int u)
-{
-    visited[u] = true;
-    int c = 1;
-    for (int v : adj[u])
-        if (!visited[v])
-           c += explore(v);
-    return c;
+
+vector<int> adj[MAXN];
+int visited[MAXN];
+
+void dfs(int p) {
+    memset(visited, 0, sizeof visited);
+    stack<int> st;
+    st.push(p);
+    visited[p] = 1;
+
+    while (!st.empty()) {
+        int curr = st.top();
+        st.pop();
+        if (visited[curr]==1)continue;
+        visited[curr]=1;
+        // process current node here
+
+        for (auto i : adj[curr]) {
+            st.push(i);
+        }
+
+    }
 }

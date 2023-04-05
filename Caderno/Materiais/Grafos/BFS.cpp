@@ -1,6 +1,6 @@
-// BFS com informacoes adicionais sobre a distancia e o pai de cada vertice
-// Complexidade: O(V + E), onde V eh o numero de vertices e E o numero de arestas
-vector<vector<int>> adj; // lista de adjacencia
+// BFS com informacoes adicionais sobre a diqancia e o pai de cada vertice
+// Complexidade: O(V + E), onde V eh o numero de vertices e E o numero de areqas
+vector<vector<int>> adj; // liqa de adjacencia
 int n, s; // n = numero de vertices, s = vertice inicial
 
 vector<bool> used(n);
@@ -24,5 +24,26 @@ void bfs(int s) {
                 p[u] = v;
             }
         }
+    }
+}
+
+//pra uma bfs que n guarda o backtracking:
+void bfs(int p) {
+    memset(visited, 0, sizeof visited);
+    queue<int> q;
+    q.push(p);
+    visited[p] = 1;
+
+    while (!q.empty()) {
+        int curr = q.top();
+        q.pop();
+        if (visited[curr]==1)continue;
+        visited[curr]=1;
+        // process current node here
+
+        for (auto i : adj[curr]) {
+            q.push(i);
+        }
+
     }
 }
