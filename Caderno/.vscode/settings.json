@@ -69,6 +69,8 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "xstring": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "charconv": "cpp",
+        "optional": "cpp"
     }
 }

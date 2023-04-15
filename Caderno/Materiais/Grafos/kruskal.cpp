@@ -1,35 +1,32 @@
-// Find the minimum spanning tree and return it's cost
-// It works only to connected graph. If it's not, apply it to each connected graph
-
-ll r, c;
-cin >> r >> c; // r = number of vertex, c = number of edges
-vector<pair<int, pair<int, int>>> arestas;
-
-for (int i = 0; i < c; i++){
-    ll v, w, p;
-    cin >> v >> w >> p; // p = weight, v and w are the two connected vertices 
-    arestas.push_back({p, {v - 1, w - 1}});
-}
-
-sort(arestas.begin(), arestas.end());
-double cost = 0;
-
-vector<int> id(r);
-for (int i = 0; i < r; i++) id[i] = i;
-
-for (auto p : arestas){
-    
-    int x = p.s.f;
-    int y = p.s.s;
-    double w = p.f;
-
-    if (id[x] != id[y]){
-        cost += w;
-        int old_id = id[x], new_id = id[y];
-            
-        for (int i = 0; i < r; i++)
-            if (id[i] == old_id) id[i] = new_id;
+//vector<pair<int,int>> arestas[MAXN] em que cada aresta[i] contem o peso e o vertice adjacente
+//vector<peso,conexao>
+vector<pair<int,int>> adj[MAXN];
+vector<pair<int,int>> adjtree[MAXN];
+vector<pair<int, pair<int, int>>> kruskadj;
+int cost;
+void kruskal(){
+    for(int i = 1;i<MAXN;i++){
+        for(auto j:adj[i]){
+            kruskadj.push_back({j.first,{i,j.second}});
+        }
     }
+    sort(kruskadj.begin(),kruskadj.end());
+    cost=0;
+    int r = kruskadj.size();
+    vector<int> id(r);
+    for (int i = 0; i < r; i++) id[i] = i;
+    for (auto p : kruskadj){
+        int x = p.second.first;
+        int y = p.second.second;
+        int w = p.first;
+        if (id[x] != id[y]){
+            cost += w;
+            adjtree[x].push_back({w,y});
+            int old_id = id[x], new_id = id[y];
+            for (int i = 0; i < r; i++)
+                if (id[i] == old_id) id[i] = new_id;
+        }
+    }
+
 }
 
-cout << cost << endl;
