@@ -6,7 +6,6 @@ void dfs(int p) {
     memset(visited, 0, sizeof visited);
     stack<int> st;
     st.push(p);
-    visited[p] = 1;
 
     while (!st.empty()) {
         int curr = st.top();

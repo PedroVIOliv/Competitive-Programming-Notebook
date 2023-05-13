@@ -32,7 +32,6 @@ void bfs(int p) {
     memset(visited, 0, sizeof visited);
     queue<int> q;
     q.push(p);
-    visited[p] = 1;
 
     while (!q.empty()) {
         int curr = q.top();
