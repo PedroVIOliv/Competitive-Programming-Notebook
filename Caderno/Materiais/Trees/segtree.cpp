@@ -6,11 +6,11 @@ Tnode combine(Tnode left, Tnode right) {
 }
 
 Tnode build(int p, int l, int r) { // O(n) 
-    if (l == r) return seg[p] = {v[l], {l, r}};  
+    if (l == r) return seg[p] = ...;  
     int m = (l + r) / 2;
     Tnode left = build(p * 2, l, m);
     Tnode right = build(p * 2 + 1, m + 1, r);
-    seg[p] = combine(left, right);
+    return seg[p] = combine(left, right);
         
 }
 
