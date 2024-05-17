@@ -3,6 +3,7 @@ const int SZ = 1<<17;
 // Para inicializar: node<int> st
 // É usada para os mesmos objetivos da seg tree normal, mas o query range e a quantidade de elementos é muito grande
 // Apenas cria nodes quando necessário
+// 1-based
 template<class T> struct node {
 	T val = 0; node<T>* c[2];
 	node() { c[0] = c[1] = NULL; }

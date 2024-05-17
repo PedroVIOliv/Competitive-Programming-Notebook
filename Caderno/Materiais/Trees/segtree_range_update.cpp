@@ -1,4 +1,5 @@
 // Com lazy propagation, podemos fazer atualizações de ranges em O(logn)
+// 0-based
 struct segtree {
     vector<int> st, lz;
     int n;

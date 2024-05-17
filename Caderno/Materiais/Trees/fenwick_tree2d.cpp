@@ -1,4 +1,5 @@
 // Fenwick Tree (BIT) para somas de intervalos em uma matriz
+// 0-based
 struct FenwickTree2D {
     vector<vector<int>> bit;
     int n, m; // linhas, colunas
