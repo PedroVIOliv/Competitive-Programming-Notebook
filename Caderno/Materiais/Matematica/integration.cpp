@@ -2,7 +2,7 @@
 float func(float x) { return (3*x - (x*x)); } 
   
 // Function for approximate integral 
-// ll: lower limit, ul: upper limit, n: number of subintervals in [ll, ul]
+// ll: lower limit, ul: upper limit, n (par): number of subintervals in [ll, ul]
 float simpsons_(float ll, float ul, int n) { 
     float h = (ul - ll) / n; 
     float x[10], fx[10]; 
