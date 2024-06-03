@@ -10,6 +10,7 @@ void kruskal(){
             kruskadj.push_back({j.first,{i,j.second}});
         }
     }
+    // to get the maximum spanning tree, sort in decreasing order
     sort(kruskadj.begin(),kruskadj.end());
     cost=0;
     int r = kruskadj.size();

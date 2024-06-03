@@ -13,9 +13,7 @@ void dfs(int cur, int par) {
     for(auto x : g[cur]) {
         if(!vis[x]) {
             child++;
-            
             dfs(x, cur);
-
             low[cur] = min(low[cur], low[x]);
 
             if(low[x] > disc[cur])
