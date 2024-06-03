@@ -27,3 +27,23 @@ vector<pt> convex_hull(vector<pt> v) { // convex hull - O(n log(n))
     for (pt i : u) l.push_back(i);
     return l;
 }
+
+// overall O(n log n)
+vector<point> CH_Andrew(vector<point> &Pts) {
+    int n = Pts.size(), k = 0;
+    vector<point> H(2*n);
+    sort(Pts.begin(), Pts.end());
+    // sort the points by x/y
+    for (int i = 0; i < n; ++i) {
+        // build lower hull
+        while ((k >= 2) && !ccw(H[k-2], H[k-1], Pts[i])) --k;
+        H[k++] = Pts[i];
+    }
+    for (int i = n-2, t = k+1; i >= 0; --i) {
+        // build upper hull
+        while ((k >= t) && !ccw(H[k-2], H[k-1], Pts[i])) --k;
+        H[k++] = Pts[i];
+    }
+    H.resize(k);
+    return H;
+}
