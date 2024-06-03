@@ -1,7 +1,6 @@
 // 1 based, point update and range queries
 int segment(int low, int high, 
-			int pos, int strip) 
-{ 
+			int pos, int strip) { 
 	if (high == low)
 		ini_seg[strip][pos] = rect[strip][low]; 
 	else { 
@@ -13,8 +12,7 @@ int segment(int low, int high,
 	} 
 } 
 
-int finalSegment(int low, int high, int pos) 
-{ 
+int finalSegment(int low, int high, int pos) { 
 	if (high == low) { 
 
 		for (int i = 1; i < 2 * sizes; i++) 
@@ -32,8 +30,7 @@ int finalSegment(int low, int high, int pos)
 } 
 
 int finalQuery(int pos, int start, int end, 
-			int x1, int x2, int node) 
-{ 
+			int x1, int x2, int node) { 
 	if (x2 < start || end < x1)
 		return 0; 
 
@@ -51,8 +48,7 @@ int finalQuery(int pos, int start, int end,
 } 
 
 int query(int pos, int start, int end, 
-		int y1, int y2, int x1, int x2) 
-{ 
+		int y1, int y2, int x1, int x2) { 
 	if (y2 < start || end < y1)
 		return 0; 
 
@@ -69,28 +65,24 @@ int query(int pos, int start, int end,
 } 
 
 int finalUpdate(int pos, int low, int high, 
-				int x, int val, int node) 
-{ 
+				int x, int val, int node) { 
 	if (low == high)
 		fin_seg[node][pos] = val; 
 	else { 
 		int mid = (low + high) / 2; 
 
-		if (low <= x && x <= mid) { 
+		if (low <= x && x <= mid)
 			finalUpdate(2 * pos, low, mid, x, val, node); 
-		} 
-		else { 
+		else
 			finalUpdate(2 * pos + 1, mid + 1, high, 
-									x, val, node); 
-		} 
+									x, val, node);  
 
 		fin_seg[node][pos] = fin_seg[node][2 * pos] + 
 							fin_seg[node][2 * pos + 1]; 
 	} 
 } 
 
-int update(int pos, int low, int high, int x, int y, int val) 
-{ 
+int update(int pos, int low, int high, int x, int y, int val) { 
 	if (low == high)
 		finalUpdate(1, 1, 4, x, val, pos); 
 	else { 
