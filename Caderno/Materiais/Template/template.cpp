@@ -13,6 +13,7 @@ using namespace std;
 #define ss second
 #define mp make_pair
 #define TETO(a, b) ((a) + (b-1))/(b)
+#define TRUNC(x) floor(x * 100) / 100
 #define dbg(x) cout << #x << " = " << x << endl
 #define print(x,y) loop(it,0,y){cout << x[it] << " ";} cout << "\n";
 
