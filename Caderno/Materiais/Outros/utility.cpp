@@ -30,3 +30,36 @@ log(a)/log(b) // log(a) na base b
 
 // numero de digitos de a na base b
 (int)floor(1 + log10((double)a)/log10((double) b));
+
+// MMC
+int lcm(int a, int b) { return a / __gcd(a, b) * b; }
+
+// Converter decimal para hexadecimal
+stringstream ss;
+ss << hex << ans; // ans eh um numero decimal
+auto res = ss.str;
+
+// Converter hexadecimal para decimal
+string hexa_number = "2beff";
+int decimal_number = stoi(hexa_number, 0, 16);
+
+
+// Converter de string para double
+double ans = stod(str);
+
+// Dar merge em dois vetores v1 e v2 em um vetor v
+merge(v1.bb, v1.ee, v2.bb, v2.ee, back_inserter(v));
+
+
+// tuple
+tuple<int, int, string> tupleName;
+tupleName.emplace_back(v1, v2, v3);
+get<index>(tupleName);
+
+
+// deque
+deque<type> d;
+d.push_front(element);
+d.push_back(element);
+d.pop_front();
+d.pop_back();
