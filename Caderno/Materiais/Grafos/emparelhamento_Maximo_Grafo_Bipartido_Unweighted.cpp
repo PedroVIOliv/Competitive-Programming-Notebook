@@ -3,7 +3,7 @@
 // Um emparelhamento em um grafo bipartido é um conjunto de arestas tal que nenhuma aresta compartilha um vértice
 #define NIL 0
 #define INF INT_MAX
-class BipGraph {
+class BipGraph { // O(E sqrt(V))
     // m and n are number of vertices on left and right sides of bipartite graph
     int m, n;
     list<int> *adj;
@@ -107,4 +107,29 @@ BipGraph::BipGraph(int m, int n) {
 // ********* ONE BASED **************
 void BipGraph::addEdge(int u, int v) {
     adj[u].pb(v);
+}
+
+
+// OUTRA MANEIRA
+vi match, vis;
+vector<vi> AL;
+
+int Aug(int L) {
+    if (vis[L]) return 0;
+    vis[L] = 1;
+    for (auto &R : AL[L])
+        if ((match[R] == -1) || Aug(match[R])) {
+            match[R] = L;
+            return 1;
+        }
+    return 0;
+}
+
+int max_card() { // O(VE)
+    int ans = 0;
+    for(int i = 0; i < V; i++) {
+        vis.assign(V, 0);;
+        ans += Aug(i);
+    }
+    return ans;
 }

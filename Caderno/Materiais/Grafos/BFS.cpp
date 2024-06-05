@@ -46,3 +46,22 @@ void bfs(int p) {
 
     }
 }
+
+// para grid
+vector< pair<int, int> > mov = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+pair<int, int> bfs(int i, int j){
+    queue< pair<int, int> > q;
+    q.push({i, j}), vis[i][j] = 1;
+    pair<int, int> ret; // last visited node
+    while(!q.empty()){
+        ret = q.front(); q.pop();
+        for(int k=0; k<4; k++){
+            int new_i = ret.ff + mov[k].ff, new_j = ret.ss + mov[k].ss;
+            if(val(new_i, new_j)) {
+                q.push({new_i, new_j});
+                vis[new_i][new_j] = 1;
+            }
+        }
+    }
+    return ret;
+}

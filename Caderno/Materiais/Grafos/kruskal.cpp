@@ -11,6 +11,12 @@ void kruskal(){
         }
     }
     // to get the maximum spanning tree, sort in decreasing order
+
+    // Poderiamos ordenar de outra forma, por exemplo: 
+    // ordenar (kruskadj.begin(), kruskadj.begin() + F)
+    // depois ordenar(kruskadj.begin() + F, kruskadj.end())
+    // Por exemplo, queremos minimizar o custo, mas também a quantidade de rodovias
+    // Sabendo que rodovias fica depos de kruskadj.begin() + F
     sort(kruskadj.begin(),kruskadj.end());
     cost=0;
     int r = kruskadj.size();

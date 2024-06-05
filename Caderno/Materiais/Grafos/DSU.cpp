@@ -15,6 +15,8 @@ void set_union(int p, int q) {
 // Tamanho do set que contém o elemento i
 int sizeOfSet(int i) { return sz[find(i)]; }
 
+
+
 // DSU 2D
 int get_id(int i, int j) {
     return (i * M) + j;

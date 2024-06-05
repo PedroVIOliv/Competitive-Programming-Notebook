@@ -24,7 +24,7 @@ public:
         level = new int[V];
     }
  
-    // add edge to the graph
+    // add edge to the graph (unidirecional)
     void addEdge(int u, int v, int C) {
         // Forward edge : 0 flow and C capacity
         Edge a{ v, 0, C, (int)adj[v].size() };
