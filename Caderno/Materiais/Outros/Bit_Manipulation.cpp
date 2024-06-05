@@ -21,10 +21,11 @@ int turnAllBitsOn(int n) { return (1 << n)-1; }
 // Pode obter o bit ligado menos significativo
 bool isTwoPower(int n) { return (n & (n-1)); }
 
+int howManyBitsOn(int n) { return __builtin_popcount(n); }
+
+int howManyTrailingZeros(int n) { return __builtin_ctz(n); }
+
 void enumerateAllBitmaskSubsets(int n) {
     for(int subset = n; subset; subset = (n & (subset-1)))
         cout << subset << endl;
 }
-
-int howManyBitsOn(int n) { return __builtin_popcount(n); }
-int howManyTrailingZeros(int n) { return __builtin_ctz(n); }
