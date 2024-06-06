@@ -43,8 +43,8 @@
    \lstinputlisting{#2}
 }
 
-\title{Marcela Caram\ \ \ \ \  Pedro Veloso\ \ \ \ \  Victor MontMor}
-\author{\#include <confia>}
+\title{Pedro Bitencourt\ \ \ \ \  Pedro Veloso\ \ \ \ \  Victor MontMor}
+\author{Resultado ta dando}
 \date{}
 
 \begin{document}
@@ -53,8 +53,59 @@
 \centering
 \end{figure}
 \maketitle
+
+
+
+
+\clearpage
+
 \begin{multicols}{2}
 
 \tableofcontents
+
+
+\newpage
+
+\section{Tabelas e Imagens}
+
+\begin{figure}[t]
+   \centering
+   \includegraphics[scale=0.5]{ascii_table.png}
+\end{figure}
+
+\subsection{ASCII Table}
+\includegraphics[scale=0.4]{ascii_table.png}
+\subsection{One Second Time Complexity}
+\includegraphics[scale=0.4]{one_second_time_complexity.png}
+
+\subsection{Triângulo de Pascal}
+\includegraphics[scale=0.4]{pascal_triangle.png}
+
+\subsection{Limite de Representação de Dados}
+\includegraphics[scale=0.3]{limite_dados.png}
+
+\subsection{Fatoriais}
+
+Fatoriais até 20 com limites de tipo
+
+\includegraphics[scale=0.4]{fatorial.png}
+
+\subsection{Quantidade de números primos de 1 até $10^n$}
+
+É sempre verdade que n/ln(n) < pi(n) < 1.26 n/ln(n).
+
+\includegraphics[scale=0.4]{quantidade_primos.png}
+
+\subsection{Truques sujos (porém válidos)}
+\begin{itemize}
+   \item \textbf{Método Steve Halim:} As possíveis saídas do problema cabem no código do problema? Deixe um algoritmo naive
+   brutando o problema na máquina por alguns minutos e escreva as respostas direto no código para submeter. Exemplo:
+   problema cuja entrada é um único número da ordem de 105 . Verificar o tamanho máximo de caracteres de uma
+   submissão
+   \item \textbf{Problemas com constantes:} Se algum valor útil de algum problema for constante (independe da entrada), mas você
+   não sabe, brute ele na sua máquina e cole no código
+   \item \textbf{Debug com assert:} Pode colocar assert em código para submeter. Tente usar isso pra transformar um WA em um
+   RTE. É uma forma válida de debug. Usar isso somente no desespero (fica gastando submissões)
+\end{itemize}
 
 \newpage
