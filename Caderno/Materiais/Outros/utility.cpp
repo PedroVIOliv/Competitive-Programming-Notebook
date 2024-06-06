@@ -12,6 +12,8 @@ nth_element(v.begin(), v.begin()+i, v.end());
 // O(nlog²n)
 stable_sort(v.begin(), v.begin());
 
+is_sorted(v.begin(), v.end());
+
 // Ler um número octal e printar
 scanf("%o", &num); printf("%o", num);
 
@@ -63,3 +65,9 @@ d.push_front(element);
 d.push_back(element);
 d.pop_front();
 d.pop_back();
+
+
+// permutation
+sort(str.begin(), str.end());
+do { cout << str << endl; } 
+    while(next_permutation(str.begin(), str.end()));
