@@ -1,3 +1,10 @@
+#define ll long long
+#define ld long double
+#define pb push_back
+#define vi vector<int>
+#define all(x) x.begin(), x.end()
+#define sz(x) x.size()
+
 struct line {
     ll m, b;
     ll eval(ll x) { return m * x + b; }
